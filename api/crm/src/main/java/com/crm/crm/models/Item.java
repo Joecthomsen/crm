@@ -18,6 +18,4 @@ public class Item {
     private int itemQuantity;
     private float itemPrice;
     private int belongsToOrder;
-
-    
 }
