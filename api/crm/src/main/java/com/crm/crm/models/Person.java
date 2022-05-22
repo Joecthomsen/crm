@@ -6,13 +6,21 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
 
+import javax.persistence.*;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @ToString
+@Entity
+@Table(name = "Person")
 public class Person {
-    
+    @Id
+    @Column(name = "id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String firstName;
     private String lastName;
     private String phoneNumber;
