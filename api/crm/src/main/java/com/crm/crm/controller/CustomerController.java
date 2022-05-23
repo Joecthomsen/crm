@@ -3,6 +3,9 @@ package com.crm.crm.controller;
 import com.crm.crm.models.Customer;
 import com.crm.crm.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,7 +27,8 @@ public class CustomerController {
     }
 
     @PostMapping("/post")
-    public Customer addCustomer(@RequestBody Customer customer){
-        return service.addCustomer(customer);
+    public HttpEntity<Customer> addCustomer(@RequestBody Customer customer){
+        Customer newCustomer = service.addCustomer(customer);
+        return new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
     }
 }

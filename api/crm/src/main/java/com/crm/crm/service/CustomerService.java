@@ -14,8 +14,9 @@ public class CustomerService {
     CustomerRepository repository;
 
     public Customer getCustomer(int id){
-        return repository.getOne(id);
+        return repository.findById(id).orElse(null);
     }
+
 
     public List<Customer> getCustomers(){
         return repository.findAll();
