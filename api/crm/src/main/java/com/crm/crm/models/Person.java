@@ -19,8 +19,7 @@ public class Person {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
+    private int id;
     private String firstName;
     private String lastName;
     private String phoneNumber;

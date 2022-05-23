@@ -17,6 +17,10 @@ public class PersonService {
         return repository.save(person);
     }
 
+    public Person getPerson(int id){
+        return repository.findById(id).orElse(null);
+    }
+
     public List<Person> getPersons() {
         return repository.findAll();
     }

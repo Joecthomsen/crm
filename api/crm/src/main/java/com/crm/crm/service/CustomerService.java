@@ -2,11 +2,12 @@ package com.crm.crm.service;
 
 import com.crm.crm.models.Customer;
 import com.crm.crm.repository.CustomerRepository;
-import net.bytebuddy.agent.builder.AgentBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CustomerService {
 
     @Autowired

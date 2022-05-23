@@ -11,7 +11,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    @PostMapping("/create")
+    @PostMapping("/post")
     public User createUser(@RequestBody User user)
     {
         return userService.addUser(user);
@@ -28,5 +28,4 @@ public class UserController {
     {
         return userService.getAllUsers();
     }
-
 }
