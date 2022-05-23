@@ -14,17 +14,12 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-@Table(name = "Person")
-public class Person {
-    @Id
-    @Column(name = "id", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    private String firstName;
-    private String lastName;
-    private String phoneNumber;
-    private String email;
-    private String position;
-    private String comments;
+public class Customers {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "customerId", nullable = false)
+    private int customerId;
+    private String belongsToUserId;
+    private String companyName;
 }

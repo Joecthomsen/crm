@@ -1,6 +1,6 @@
 package com.crm.crm.service;
 
-import com.crm.crm.models.Customer;
+import com.crm.crm.models.Customers;
 import com.crm.crm.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,16 +13,16 @@ public class CustomerService {
     @Autowired
     CustomerRepository repository;
 
-    public Customer getCustomer(int id){
+    public Customers getCustomer(int id){
         return repository.findById(id).orElse(null);
     }
 
 
-    public List<Customer> getCustomers(){
+    public List<Customers> getCustomers(){
         return repository.findAll();
     }
 
-    public Customer addCustomer(Customer customer){
-        return repository.save(customer);
+    public Customers addCustomer(Customers customers){
+        return repository.save(customers);
     }
 }

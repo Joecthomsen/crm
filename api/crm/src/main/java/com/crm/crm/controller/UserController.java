@@ -17,10 +17,10 @@ public class UserController {
         return userService.addUser(user);
     }
 
-    @GetMapping("/get/{email}")
-    public User getUser(@PathVariable String email)
+    @GetMapping("/get/{id}")
+    public User getUser(@PathVariable int id)
     {
-        return userService.getUser(email);
+        return userService.getUser(id);
     }
 
     @GetMapping("/get")

@@ -1,9 +1,6 @@
 package com.crm.crm.models;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,10 +14,13 @@ import lombok.ToString;
 @Setter
 @ToString
 @Entity
-@Table(name = "User")
+@Table(name = "UserProfiles")
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "userId", nullable = false)
+    private int userId;
     private String userEmail;
     private String userFirstName;
     private String userLastName;

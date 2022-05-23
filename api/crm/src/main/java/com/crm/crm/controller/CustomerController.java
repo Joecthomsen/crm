@@ -1,6 +1,6 @@
 package com.crm.crm.controller;
 
-import com.crm.crm.models.Customer;
+import com.crm.crm.models.Customers;
 import com.crm.crm.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpEntity;
@@ -17,18 +17,18 @@ public class CustomerController {
     CustomerService service;
 
     @GetMapping("/get/{id}")
-    public Customer getCustomer(@PathVariable int id){
+    public Customers getCustomer(@PathVariable int id){
         return service.getCustomer(id);
     }
 
     @GetMapping("/get")
-    public List<Customer> getCustomers(){
+    public List<Customers> getCustomers(){
         return service.getCustomers();
     }
 
     @PostMapping("/post")
-    public HttpEntity<Customer> addCustomer(@RequestBody Customer customer){
-        Customer newCustomer = service.addCustomer(customer);
-        return new ResponseEntity<>(newCustomer, HttpStatus.CREATED);
+    public HttpEntity<Customers> addCustomer(@RequestBody Customers customers){
+        Customers newCustomers = service.addCustomer(customers);
+        return new ResponseEntity<>(newCustomers, HttpStatus.CREATED);
     }
 }

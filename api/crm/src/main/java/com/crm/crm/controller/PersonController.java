@@ -1,7 +1,7 @@
 package com.crm.crm.controller;
 
-import com.crm.crm.models.Person;
-import com.crm.crm.service.PersonService;
+import com.crm.crm.models.Employees;
+import com.crm.crm.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -12,20 +12,20 @@ import java.util.List;
 public class PersonController {
 
     @Autowired
-    PersonService personService;
+    EmployeeService employeeService;
 
     @GetMapping("/get/{id}")
-    public Person getPerson(@PathVariable int id){
-        return personService.getPerson(id);
+    public Employees getPerson(@PathVariable int id){
+        return employeeService.getPerson(id);
     }
 
     @GetMapping("/get")
-    public List<Person> getPersons(){
-        return personService.getPersons();
+    public List<Employees> getPersons(){
+        return employeeService.getPersons();
     }
 
     @PostMapping("/post")
-    public Person addPerson(@RequestBody Person person){
-        return personService.addPerson(person);
+    public Employees addPerson(@RequestBody Employees employees){
+        return employeeService.addPerson(employees);
     }
 }

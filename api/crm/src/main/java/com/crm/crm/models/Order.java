@@ -16,14 +16,13 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
+@Table(name = "Orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderId", nullable = false)
     private int orderId;
-
     private int customerId;
-    private String item;
     private Date date;
     private float price;
     

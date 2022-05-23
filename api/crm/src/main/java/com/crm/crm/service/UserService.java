@@ -20,9 +20,9 @@ public class UserService {
         return repository.save(user);
     }
 
-    public User getUser(String email)
+    public User getUser(int id)
     {
-        return repository.findById(email).orElse(null);
+        return repository.findById(id).orElse(null);
     }
 
     public List<User> getAllUsers()

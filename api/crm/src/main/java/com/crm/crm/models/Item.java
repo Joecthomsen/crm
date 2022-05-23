@@ -14,14 +14,15 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
+@Table(name = "Items")
 public class Item {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "itemId", nullable = false)
     private int itemId;
+    private int belongsToOrder;
     private String itemName;
     private int itemQuantity;
     private float itemPrice;
-    private int belongsToOrder;
 }

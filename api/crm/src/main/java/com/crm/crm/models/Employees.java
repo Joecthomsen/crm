@@ -14,14 +14,17 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Entity
-public class Customer {
-
+@Table(name = "Employees")
+public class Employees {
     @Id
+    @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customerId", nullable = false)
-    private int customerId;
-    private String companyName;
-    private String belongsTo;
-    private int contactPerson;
-    
+    private int id;
+    private String firstName;
+    private String lastName;
+    private String phoneNumber;
+    private String email;
+    private String position;
+    private String comments;
+
 }
