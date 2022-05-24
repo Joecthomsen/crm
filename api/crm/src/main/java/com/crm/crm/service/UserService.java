@@ -12,8 +12,8 @@ import org.springframework.stereotype.Service;
 import com.crm.crm.repository.UserRepository;
 
 @Service
-@AllArgsConstructor
-@NoArgsConstructor
+//@AllArgsConstructor
+//@NoArgsConstructor
 public class UserService {
 
     @Autowired
